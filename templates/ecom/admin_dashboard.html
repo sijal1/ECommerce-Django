@@ -1,0 +1,54 @@
+{% extends 'ecom/admin_base.html' %}
+{% load static %}
+{% block content %}
+<br>
+{% include 'ecom/admin_dashboard_cards.html' %}
+<br><br><br><br><br>
+
+<hr><hr>
+<div class="container">
+
+    <div class="panel panel-default">
+      <div class="panel-heading" style="text-align:center; background: #333; color: #fff;">
+        <h6 class="panel-title">Recent Bookings</h6>
+      </div>
+      <table class="table table-hover table-bordered" id="dev-table">
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Contact</th>
+            <th>Shipment Address</th>
+            <th>Product</th>
+            <th>Image</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        {% for product, customer, order in data %}
+        <tr>
+          {% for c in customer %}
+          <td>{{ c.get_name }}</td>
+          <td>{{ c.mobile }}</td>
+          <td>{{ order.address }}</td>
+          {% endfor %}
+          {% for p in product %}
+          <td>{{ p.name }}</td>
+          <td><img src="{% static p.product_image.url %}" alt="Product Image" height="40px" width="40px" /></td>
+          {% endfor %}
+          <td>
+            {% if order.status == 'Pending' %}
+              <span class="badge badge-info">{{ order.status }}</span>
+            {% elif order.status == 'Delivered' %}
+              <span class="badge badge-success">{{ order.status }}</span>
+            {% elif order.status == 'Out for Delivery' %}
+              <span class="badge badge-warning">{{ order.status }}</span>
+            {% else %}
+              <span class="badge badge-primary">{{ order.status }}</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+</div>
+{% endblock content %}

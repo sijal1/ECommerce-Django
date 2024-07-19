@@ -1,0 +1,30 @@
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Category: {{ category.name }}</h1>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4">
+            <div class="card" >
+                <img src="{% static product.product_image.url %}" class="card-img-top" alt="{{ product.name }}" width="200" height="200">
+
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #212a31;">{{ product.name }}</h5>
+                    <p class="card-text" style="color: #212a31;" >{{ product.description }}</p>
+                    <p class="card-text" style="color: #212a31;">Price: ${{ product.price }}</p>
+                    <a class="cart " href="{% url 'add-to-cart' product.id %}">
+                        <span class="add-to-cart">
+                        <span class="txt" style="background-color: #212a31; color: #d3d9d4; padding: 10px 20px; text-decoration: none; border-radius: 5px;"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+                    </a>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

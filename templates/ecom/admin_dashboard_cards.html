@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <style media="screen">
+    .market-update-block {
+      padding: 2em;
+      background: #212a31; /* Updated background color */
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+  
+    .market-update-block h3,
+    .market-update-block h4,
+    .market-update-block p {
+      color: #d3d9d4; /* Updated text color */
+      font-family: 'Carrois Gothic', sans-serif;
+    }
+  
+    .market-update-block h3 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+  
+    .market-update-block h4 {
+      font-size: 1.2em;
+      margin: 0.3em 0;
+    }
+  
+    .market-update-block p {
+      font-size: 0.8em;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+  
+    .market-update-block:hover {
+      background: #2e3944; /* Updated hover background color */
+    }
+  
+    .market-update-right i {
+      font-size: 3em;
+      color: #d3d9d4; /* Updated icon color */
+      width: 80px;
+      height: 80px;
+      background: #2e3944; /* Updated icon background color */
+      text-align: center;
+      border-radius: 50%;
+      line-height: 80px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+  
+    .market-update-right i:hover {
+      background-color: #124e66; /* Updated hover icon background color */
+      transform: scale(1.1);
+    }
+  
+    .market-update-left {
+      padding: 0;
+    }
+  </style>
+  
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="market-updates">
+    <div class="col-md-4 market-update-gd">
+      <div class="market-update-block clr-block-1">
+        <div class="col-md-8 market-update-left">
+          <h3>{{customercount}}</h3>
+          <h4>Registered Customer</h4>
+
+        </div>
+        <div class="col-md-4 market-update-right">
+          <i class="fa fa-users"></i>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+    <div class="col-md-4 market-update-gd">
+      <div class="market-update-block clr-block-2">
+        <div class="col-md-8 market-update-left">
+          <h3>{{productcount}}</h3>
+          <h4>Total Product</h4>
+
+        </div>
+        <div class="col-md-4 market-update-right">
+          <i class="fa fa-shopping-cart"></i>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+    <div class="col-md-4 market-update-gd">
+      <div class="market-update-block clr-block-3">
+        <div class="col-md-8 market-update-left">
+          <h3>{{ordercount}}</h3>
+          <h4>Total Orders</h4>
+
+        </div>
+        <div class="col-md-4 market-update-right">
+          <i class="fa fa-bar-chart"> </i>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+
+  </div>
+  <br><br>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+{% extends 'ecom/customer_base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #f7f7f7;
+   
+  }
+  
+  .profile-container {
+    margin-top: 20px; /* Adjust spacing as needed */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: #212a31;
+  }
+  
+  .profile-pic {
+    max-width: 150px; /* Adjust image size */
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-details {
+    margin-left: 20px; /* Adjust spacing between image and details */
+  }
+  
+  .contact-info {
+    margin-top: 10px;
+  }
+  
+  .edit-button {
+    margin-top: 20px; /* Adjust button spacing */
+  }
+  
+  .edit-button .btn {
+    background-color: #124e66;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-button .btn:hover {
+    background-color: #124e66; /* Darker shade on hover */
+  }
+  
+  .btn span {
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .btn:hover span {
+    padding-right: 25px;
+  }
+  
+  .btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+</style>
+
+<div class="container">
+  <div class="row profile-container">
+    <div class="col-md-3 text-center">
+      <img src="{% static customer.profile_pic.url %}" alt="profile pic" class="profile-pic img-rounded img-responsive">
+    </div>
+    <div class="col-md-9">
+      <blockquote>
+        <p>Username: {{ request.user }}</p>
+        <small><cite title="Address"><i class="glyphicon glyphicon-map-marker"></i> Address: {{ customer.address }}</cite></small>
+      </blockquote>
+      <p class="contact-info"><i class="glyphicon glyphicon-phone"></i> Contact: {{ customer.mobile }}</p>
+    </div>
+  </div>
+
+  <div class="row edit-button text-center">
+    <div class="col-md-12">
+      <a href="/edit-profile" class="btn btn-primary btn-lg"><span>Edit Profile </span></a>
+    </div>
+  </div>
+</div>
+<BR><BR><br><BR><br>
+ 
+{% endblock content %}

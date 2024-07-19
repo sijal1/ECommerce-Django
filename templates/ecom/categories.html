@@ -1,0 +1,31 @@
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3><p>Explore our categories:</p></h3>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="text-center">All Categories</h1>
+    <div class="row">
+        {% for category in categories %}
+        <div class="col-md-4">
+            <div class="card mx-auto" style="width: 18rem;">
+                <img src="{% static category.image.url %}" class="card-img-top" alt="{{ category.name }}" width="200" height="200">
+                <div class="card-body text-center">
+                    <h5 class="card-title" style="font-weight: bolder; color: #212a31;">{{ category.name }}</h5>
+                    <p class="card-text">{{ category.description }}</p>
+                    <a href="{% url 'category-view' category.id %}" style="background-color: #212a31; color: #d3d9d4; padding: 10px 20px; text-decoration: none; border-radius: 5px;">View Products</a>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
