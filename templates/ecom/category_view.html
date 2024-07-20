@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h5 class="card-title" style="color: #212a31;">{{ product.name }}</h5>
                     <p class="card-text" style="color: #212a31;" >{{ product.description }}</p>
-                    <p class="card-text" style="color: #212a31;">Price: ${{ product.price }}</p>
+                    <p class="card-text" style="color: #212a31;">Price: ₹{{ product.price }}</p>
                     <a class="cart " href="{% url 'add-to-cart' product.id %}">
                         <span class="add-to-cart">
                         <span class="txt" style="background-color: #212a31; color: #d3d9d4; padding: 10px 20px; text-decoration: none; border-radius: 5px;"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
